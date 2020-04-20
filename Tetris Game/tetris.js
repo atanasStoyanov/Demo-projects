@@ -5,7 +5,7 @@ const scoreElement = document.getElementById('score');
 const ROW = 20;
 const COL = 10;
 const SQ = squareSize = 20;
-const VACANT = 'White' //color of an empty square
+const VACANT = 'Black' //color of an empty square
 
 //draw a square 
 
@@ -13,7 +13,7 @@ function drawSquare(x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x * SQ, y * SQ, SQ, SQ);
 
-    ctx.strokeStyle = `Black`;
+    ctx.strokeStyle = 'Black';
     ctx.strokeRect(x * SQ, y * SQ, SQ, SQ);
 }
 
@@ -147,7 +147,7 @@ Piece.prototype.rotate = function () {
             kick = 1 // move the piece to the right
         }
     }
-    
+
     if (!this.collision(kick, 0, nextPattern)) {
         this.unDraw();
         this.x += kick;
